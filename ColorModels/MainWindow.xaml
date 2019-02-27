@@ -9,6 +9,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 	<Window.Resources>
+		<Style x:Key="styleForSlider" TargetType="Slider">
+			<Setter Property="Slider.Minimum" Value ="0"/>
+			<Setter Property="Slider.Maximum" Value ="100"/>
+			<Setter Property="Slider.TickFrequency" Value="1"/>
+			<Setter Property="Slider.IsSnapToTickEnabled" Value="True"/>
+		</Style>
 		<local:ColorToBrushConverter x:Key="brushToColorConverter"></local:ColorToBrushConverter>
 		<color:ColorPicker x:Key="picker"></color:ColorPicker>
 	</Window.Resources>
@@ -29,25 +35,25 @@
 				<color:IntegerUpDown Text="{Binding ElementName=Cmyk, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Left" Width="45" Margin="5 0 5 0" />
 				<TextBlock DockPanel.Dock="Left" 
                      Margin="10,0,5,0">C</TextBlock>
-				<Slider x:Name="Cmyk" Minimum="0" Maximum="100" TickFrequency = "1" IsSnapToTickEnabled = "True" ValueChanged="CMYK_ValueChanged"/>
+				<Slider x:Name="Cmyk" Style="{StaticResource styleForSlider}" ValueChanged="CMYK_ValueChanged"/>
 			</DockPanel>
 			<DockPanel Margin ="0 5 0 0">
 				<color:IntegerUpDown Text="{Binding ElementName=cMyk, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Left" Width="45" Margin="5 0 5 0"/>
 				<TextBlock DockPanel.Dock="Left" 
                      Margin="10,0,2,0">M</TextBlock>
-				<Slider x:Name="cMyk" Minimum="0" Maximum="100" TickFrequency = "1" IsSnapToTickEnabled = "True" ValueChanged="CMYK_ValueChanged"  ></Slider>
+				<Slider x:Name="cMyk" Style="{StaticResource styleForSlider}" ValueChanged="CMYK_ValueChanged"  ></Slider>
 			</DockPanel>
 			<DockPanel Margin ="0 5 0 0">
 				<color:IntegerUpDown Text="{Binding ElementName=cmYk, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Left" Width="45" Margin="5 0 5 0"/>
 				<TextBlock DockPanel.Dock="Left" 
                      Margin="10,0,6,0">Y</TextBlock>
-				<Slider x:Name="cmYk" Minimum="0" Maximum="100" TickFrequency = "1" IsSnapToTickEnabled = "True" ValueChanged="CMYK_ValueChanged"  ></Slider>
+				<Slider x:Name="cmYk" Style="{StaticResource styleForSlider}" ValueChanged="CMYK_ValueChanged"  ></Slider>
 			</DockPanel>
 			<DockPanel Margin ="0 5 0 0">
 				<color:IntegerUpDown Text="{Binding ElementName=cmyK, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Left" Width="45" Margin="5 0 5 0"/>
 				<TextBlock DockPanel.Dock="Left" 
                      Margin="10,0,6,0">K</TextBlock>
-				<Slider x:Name="cmyK" Minimum="0" Maximum="100" TickFrequency = "1" IsSnapToTickEnabled = "True" ValueChanged="CMYK_ValueChanged" ></Slider>
+				<Slider x:Name="cmyK" Style="{StaticResource styleForSlider}" ValueChanged="CMYK_ValueChanged" ></Slider>
 			</DockPanel>
 		</StackPanel>
 		<DockPanel Grid.Row="2" VerticalAlignment="Center">
